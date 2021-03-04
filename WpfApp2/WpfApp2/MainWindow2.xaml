@@ -395,27 +395,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <!--<Style x:Key="testanim" TargetType="Path">
-            -->
-        <!--<Setter Property="Fill">
-                <Setter.Value>
-                    <LinearGradientBrush>
-                        <LinearGradientBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                <RotateTransform CenterY="0.5" CenterX="0.5" Angle="90"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Offset="0.2" Color="#5e38a5"/>
-                        <GradientStop Offset="1" Color="#442878"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>-->
-        <!--
-            <Setter Property="Pa"
-        </Style>-->
+        <Style x:Key="dynamicLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="0, 5, 0, 0"/>
+        </Style>
     </Window.Resources>
     <Grid Width="1200" Height="700" Margin="0,0,0,-6">
         <Grid.Background>
@@ -471,23 +455,16 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tab2" Visibility="Collapsed" Header="TabItem">
-                <Grid Background="Transparent">
-
-                    <!--<Label FontSize="17" Content="Угол поворота" HorizontalAlignment="Center" Margin="0,50,150,0" VerticalAlignment="Top"/>-->
-                    <!--<Label FontSize="17" Content="Время остановки" HorizontalAlignment="Center" Margin="150,50,0,0" VerticalAlignment="Top"/>-->
-                    <Grid Height="200" Width="400" HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                <Grid Background="Transparent" Width="420" Height="500">
+                    <Grid Height="300" Width="270" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
-                            <StackPanel MaxWidth="200" Name="Scroll" Background="#5e38a5"  Grid.Column ="0">
-                                <Label x:Name="dyn1" Content="asd"/>
+                            <StackPanel MaxWidth="270" Name="Scroll" Background="#5e38a5" >
+                                <Grid x:Name="dyn1" Width="250" Height="50" HorizontalAlignment="Center">
+                                </Grid>
                             </StackPanel>
                         </ScrollViewer>
                     </Grid>
-                    <Button x:Name="testbtnAdd" Click="testbtnAdd_Click"  Content="Add" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1"/>
-                    <Button x:Name="testbtnRemove" Click="testbtnRemove_Click" Content="Remove" HorizontalAlignment="Right" Margin="0,50,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1"/>
+                    <Button x:Name="testbtnAdd" Click="testbtnAdd_Click" Width="50" Height="30" VerticalAlignment="Bottom"/>
                 </Grid>
             </TabItem>
         </TabControl>

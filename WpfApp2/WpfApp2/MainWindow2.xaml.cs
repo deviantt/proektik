@@ -192,13 +192,6 @@ namespace WpfApp1
 				client.Send($"V{((int)(stepsperrevolution * (tableteeth / shaftteeth) * double.Parse(speedBox.Text, System.Globalization.CultureInfo.InvariantCulture) / 60)).ToString()}");
 		}
 
-		private void btn_Click(object sender, RoutedEventArgs e)
-		{
-			Label label = new Label();
-			label.Content = "asd";
-			Scroll.Children.Add(label);
-		}
-
 		private void ResumeRotation(bool resume)
 		{
 			if (!resume && rotating)
@@ -240,7 +233,7 @@ namespace WpfApp1
 		private void testbtnAdd_Click(object sender, RoutedEventArgs e)
 		{
 			int[] widths = new int[] { 30, 70, 40, 70, 40 };
-			Grid grid = new Grid() { Name = $"dynGrid{grids.Count}", Width = 250, Height = 50, HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top };
+			Grid grid = new Grid() { Name = $"dynGrid{grids.Count}", Width = 250, Height = 50, HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Top };
 			for (int i = 0; i < 5; i++) grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(widths[i]) });
 
 			Label dynLabel = new Label() { Name = $"dynLabel{grids.Count}", Content = "TestAsd", Style = FindResource("dynamicLabel") as Style };
